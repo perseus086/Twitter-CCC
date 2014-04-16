@@ -7,6 +7,9 @@ Twitter-CCC
 
 **Melbourne:** 144.3945,-38.2607,145.7647,-37.4598
 
+##In java
+It did not work very well, I think it is better to use the python one but there is the code
+
 
 ##In Python
 
