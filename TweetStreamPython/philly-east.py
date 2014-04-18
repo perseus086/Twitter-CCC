@@ -41,7 +41,7 @@ server = couchdb.Server('http://localhost:5984/')
 try:
     db = server.create('philadelphiaeast')
 except:
-    db = server.database('philadelphiaeast')
+    db = server['philadelphiaeast']
     
 '''===============LOCATIONS=============='''    
 twitterStream.filter(locations=[-75.14,39.849083,-74.955076,40.137992]) #PHILLY EAST

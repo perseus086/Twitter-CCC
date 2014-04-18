@@ -43,7 +43,7 @@ server = couchdb.Server('http://localhost:5984/')  #('http://115.146.93.184:5984
 try:
     db = server.create('melbourneeast')
 except:
-    db = server.database('melbourneeast')
+    db = server['melbourneeast']
     
 '''===============LOCATIONS=============='''    
 
