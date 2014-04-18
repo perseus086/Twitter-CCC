@@ -10,10 +10,10 @@ from tweepy.streaming import StreamListener
 import json
 
 #############API JUAN######
-ckey = "bE8mJjTd9OMxa2TPsYddItM2u"
-csecret = "wUetoc7ofwnoNUSph2GGE3OolHnedLSDTCDTlLmV1a2Y0y1r5W"
-atoken = "115946548-i3fTl9Bret21MhN4alKSBZdmVz3GW4sbkDSfzPZ0"
-asecret = "0Y6cWPeaESBGU6Saak7ps3bq682Kb8GJaSx1Tn4wCHFLR"
+ckey = "B1HlExt5hX2dRIcLGAii1cuhx"
+csecret = "QKXeMBO5uS1g2nSYYZpbbTpX8UCTucnHXWPT3gRB8LoJ7oRRXS"
+atoken = "115946548-mI65N9dqxbpg6DI3Vw2TVxct7voX5nUMzVEHiR5S"
+asecret = "o8pi9ysfPTZD0V0dkrE6F4U4rQqghsWOsDXRq8qNNOeLC"
 ##################
 
 class listener(StreamListener):
