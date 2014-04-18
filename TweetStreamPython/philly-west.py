@@ -13,8 +13,8 @@ import json
 ########API ELISA ######
 ckey = "O1nmxlULUkNtqj8S3wjVPilEa"
 csecret = "7SHMyC7Myg9wlkQOBQg71rnl2Fkq0Fz4F88qgiA2wqKEv1XtSU"
-atoken = ""
-asecret = ""
+atoken = "64547887-Wh2x6AMVdlyLe17aXmcaQjxl1ILhmOQfkAKJmcCaD"
+asecret = "QDjfJGeGHVrw2IyqneIqDvmM2JTmObsOYtMSfSqG9gIJc"
 #####################
 
 class listener(StreamListener):
