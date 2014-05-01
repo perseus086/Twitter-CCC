@@ -35,7 +35,7 @@ Geocouch Installation
 6. git clone https://github.com/couchbase/geocouch.git
 7. cd geocouch
 7. git chekout couchdb1.3.x
-8. export COUCH_SRC=<<couch-source-path>>/src/couchdb
+8. export COUCH_SRC=\<couch-source-path>/src/couchdb
 9. make
 10. cp <<geocouch-path>>/etc/couchdb/default.d/geocouch.ini <<couchdb-source-path>>/etc/couchdb/default.d/
 11. Futon tests:  
