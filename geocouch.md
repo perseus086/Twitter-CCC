@@ -25,9 +25,9 @@ Geocouch Installation
 	sudo rm /etc/logrotate.d/couchdb /etc/init.d/couchdb
 
 	### install logrotate and initd scripts
-	sudo ln -s /usr/local/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb
-	sudo ln -s /usr/local/etc/init.d/couchdb  /etc/init.d
-	sudo update-rc.d couchdb defaults
+	sudo ln -s /usr/local/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb  
+	sudo ln -s /usr/local/etc/init.d/couchdb  /etc/init.d  
+	sudo update-rc.d couchdb defaults  
 5. Create missing folders:
 	mkdir tmp/log
 	mkdir tmp/run
