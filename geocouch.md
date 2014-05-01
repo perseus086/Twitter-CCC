@@ -29,9 +29,9 @@ Geocouch Installation
 	sudo ln -s /usr/local/etc/init.d/couchdb  /etc/init.d  
 	sudo update-rc.d couchdb defaults  
 5. Create missing folders:
-	mkdir tmp/log
-	mkdir tmp/run
-	mkdir etc/couchdb/default.d/
+	mkdir tmp/log  
+	mkdir tmp/run  
+	mkdir etc/couchdb/default.d/  
 6. git clone https://github.com/couchbase/geocouch.git
 7. cd geocouch
 7. git chekout couchdb1.3.x
