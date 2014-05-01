@@ -2,16 +2,17 @@ Geocouch Installation
 ===========
 
 1. Install couchdb dependencies:
-    sudo apt-get install build-essential
-    sudo apt-get install erlang-base-hipe
-    sudo apt-get install erlang-dev
-    sudo apt-get install erlang-manpages
-    sudo apt-get install erlang-eunit
-    sudo apt-get install erlang-nox
-    sudo apt-get install libicu-dev
-    sudo apt-get install libmozjs-dev
-    sudo apt-get install libcurl4-openssl-dev
-    sudo apt-get install pkg-config
+    
+	sudo apt-get install build-essential
+    	sudo apt-get install erlang-base-hipe
+    	sudo apt-get install erlang-dev
+    	sudo apt-get install erlang-manpages
+    	sudo apt-get install erlang-eunit
+    	sudo apt-get install erlang-nox
+    	sudo apt-get install libicu-dev
+    	sudo apt-get install libmozjs-dev
+    	sudo apt-get install libcurl4-openssl-dev
+    	sudo apt-get install pkg-config
 
 2. Download and extract http://mirror.sdunix.com/apache/couchdb/source/1.5.0/apache-couchdb-1.5.0.tar.gz
 3. cd apache-couchdb-1.5.0/
