@@ -3,16 +3,16 @@ Geocouch Installation
 
 1. Install couchdb dependencies:
     
-	sudo apt-get install build-essential
-    	sudo apt-get install erlang-base-hipe
-    	sudo apt-get install erlang-dev
-    	sudo apt-get install erlang-manpages
-    	sudo apt-get install erlang-eunit
-    	sudo apt-get install erlang-nox
-    	sudo apt-get install libicu-dev
-    	sudo apt-get install libmozjs-dev
-    	sudo apt-get install libcurl4-openssl-dev
-    	sudo apt-get install pkg-config
+	sudo apt-get install build-essential  
+    	sudo apt-get install erlang-base-hipe  
+    	sudo apt-get install erlang-dev  
+    	sudo apt-get install erlang-manpages  
+    	sudo apt-get install erlang-eunit  
+    	sudo apt-get install erlang-nox  
+    	sudo apt-get install libicu-dev  
+    	sudo apt-get install libmozjs-dev  
+    	sudo apt-get install libcurl4-openssl-dev  
+    	sudo apt-get install pkg-config  
 
 2. Download and extract http://mirror.sdunix.com/apache/couchdb/source/1.5.0/apache-couchdb-1.5.0.tar.gz
 3. cd apache-couchdb-1.5.0/
@@ -42,15 +42,15 @@ Geocouch Installation
 	cp <geocouch>/share/www/script/test/* <vanilla-couch>/share/www/script/test/
 	Add the test to <vanilla-couch>/share/www/script/couch_tests.js
 
-	loadTest("spatial.js");
-	loadTest("list_spatial.js");
-	loadTest("etags_spatial.js");
-	loadTest("multiple_spatial_rows.js");
-	loadTest("spatial_compaction.js");
-	loadTest("spatial_design_docs.js");
-	loadTest("spatial_bugfixes.js");
-	loadTest("spatial_merging.js");
-	loadTest("spatial_offsets.js");
+	loadTest("spatial.js");  
+	loadTest("list_spatial.js");  
+	loadTest("etags_spatial.js");  
+	loadTest("multiple_spatial_rows.js");  
+	loadTest("spatial_compaction.js");  
+	loadTest("spatial_design_docs.js");  
+	loadTest("spatial_bugfixes.js");  
+	loadTest("spatial_merging.js");  
+	loadTest("spatial_offsets.js");  
 12. Run couchdb with geocouch
 	export ERL_FLAGS="-pa <geocouch-path>/ebin"
 	ERL_FLAGS="-pa <geocouch-path>/ebin" <couchdb-source-path>/utils/run
