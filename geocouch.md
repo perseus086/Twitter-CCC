@@ -16,7 +16,7 @@ Geocouch Installation
 
 2. Download and extract http://mirror.sdunix.com/apache/couchdb/source/1.5.0/apache-couchdb-1.5.0.tar.gz
 3. cd apache-couchdb-1.5.0/
-4. execute:
+4. execute:  
 	./configure && make
 	### install
 	sudo make install
@@ -28,19 +28,19 @@ Geocouch Installation
 	sudo ln -s /usr/local/etc/logrotate.d/couchdb /etc/logrotate.d/couchdb  
 	sudo ln -s /usr/local/etc/init.d/couchdb  /etc/init.d  
 	sudo update-rc.d couchdb defaults  
-5. Create missing folders:
+5. Create missing folders:  
 	mkdir tmp/log  
 	mkdir tmp/run  
 	mkdir etc/couchdb/default.d/  
 6. git clone https://github.com/couchbase/geocouch.git
 7. cd geocouch
 7. git chekout couchdb1.3.x
-8. export COUCH_SRC=<couch-source-path>/src/couchdb
+8. export COUCH_SRC=<<couch-source-path>>/src/couchdb
 9. make
-10. cp <geocouch-path>/etc/couchdb/default.d/geocouch.ini <couchdb-source-path>/etc/couchdb/default.d/
-11. Futon tests:
-	cp <geocouch>/share/www/script/test/* <vanilla-couch>/share/www/script/test/
-	Add the test to <vanilla-couch>/share/www/script/couch_tests.js
+10. cp <<geocouch-path>>/etc/couchdb/default.d/geocouch.ini <<couchdb-source-path>>/etc/couchdb/default.d/
+11. Futon tests:  
+	cp <geocouch>/share/www/script/test/* <<couchdb-source-path>>/share/www/script/test/  
+	Add the test to <<couchdb-source-path>>/share/www/script/couch_tests.js  
 
 	loadTest("spatial.js");  
 	loadTest("list_spatial.js");  
@@ -51,6 +51,6 @@ Geocouch Installation
 	loadTest("spatial_bugfixes.js");  
 	loadTest("spatial_merging.js");  
 	loadTest("spatial_offsets.js");  
-12. Run couchdb with geocouch
-	export ERL_FLAGS="-pa <geocouch-path>/ebin"
-	ERL_FLAGS="-pa <geocouch-path>/ebin" <couchdb-source-path>/utils/run
+12. Run couchdb with geocouch  
+	export ERL_FLAGS="-pa <geocouch-path>/ebin"  
+	ERL_FLAGS="-pa <<geocouch-path>>/ebin" <couchdb-source-path>/utils/run  
