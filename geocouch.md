@@ -37,10 +37,10 @@ Geocouch Installation
 7. git chekout couchdb1.3.x
 8. export COUCH_SRC=\<couch-source-path>/src/couchdb
 9. make
-10. cp <<geocouch-path>>/etc/couchdb/default.d/geocouch.ini <<couchdb-source-path>>/etc/couchdb/default.d/
+10. cp \<geocouch-path>/etc/couchdb/default.d/geocouch.ini \<couchdb-source-path>/etc/couchdb/default.d/
 11. Futon tests:  
-	cp <geocouch>/share/www/script/test/* <<couchdb-source-path>>/share/www/script/test/  
-	Add the test to <<couchdb-source-path>>/share/www/script/couch_tests.js  
+	cp <geocouch>/share/www/script/test/* \<couchdb-source-path>/share/www/script/test/  
+	Add the test to \<couchdb-source-path>/share/www/script/couch_tests.js  
 
 	loadTest("spatial.js");  
 	loadTest("list_spatial.js");  
@@ -52,5 +52,5 @@ Geocouch Installation
 	loadTest("spatial_merging.js");  
 	loadTest("spatial_offsets.js");  
 12. Run couchdb with geocouch  
-	export ERL_FLAGS="-pa <geocouch-path>/ebin"  
-	ERL_FLAGS="-pa <<geocouch-path>>/ebin" <couchdb-source-path>/utils/run  
+	export ERL_FLAGS="-pa \<geocouch-path>/ebin"  
+	ERL_FLAGS="-pa \<geocouch-path>/ebin" \<couchdb-source-path>/utils/run  
