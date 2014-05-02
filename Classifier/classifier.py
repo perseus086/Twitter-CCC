@@ -3,11 +3,9 @@ CLASSIFIER
 
 
 '''
-from idlelib.IOBinding import encoding
 import re
 import couchdb
 import sys
-import json
 from textblob import TextBlob
 
 
