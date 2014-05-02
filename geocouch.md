@@ -39,7 +39,7 @@ Geocouch Installation
 9. make
 10. cp \<geocouch-path>/etc/couchdb/default.d/geocouch.ini \<couchdb-source-path>/etc/couchdb/default.d/
 11. Futon tests:  
-	cp <geocouch>/share/www/script/test/* \<couchdb-source-path>/share/www/script/test/  
+	cp \<geocouch>/share/www/script/test/* \<couchdb-source-path>/share/www/script/test/  
 	Add the test to \<couchdb-source-path>/share/www/script/couch_tests.js  
 
 	loadTest("spatial.js");  
