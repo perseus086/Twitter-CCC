@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="http://115.146.95.26:5984/_utils/script/jquery.js"></script>
+    <script src="http://115.146.95.26:5984/_utils/script/jquery.couch.js"></script>
+    
+    <script type="text/javascript">
+   
+
+    var map;
+    function getData(){
+      $.getJSON('http://115.146.95.26:5984/geomelbourne/_design/geo/_spatial/points?bbox=144.951422,-37.854625,144.989062,-37.799489', function(data) {
+
+      
+      for (var i = 0; i < data.rows.length; i++) {
+            var coords = data.rows[i].geometry.coordinates;
+            // console.log(coords);
+            var latLng = new google.maps.LatLng(coords[1],coords[0]);
+            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map
+    })
+            // console.log("marker" + [i])
+  }
+      });
+    }
+  function initialize() {
+    getData();
+    var myLatlng = new google.maps.LatLng(-37.804355,144.953694);
+    var mapOptions = {
+      zoom: 15,
+      center: myLatlng
+    }
+
+   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
