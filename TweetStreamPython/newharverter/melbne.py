@@ -50,9 +50,11 @@ db_name = sys.argv[2]
 
 
 '''========couchdb'=========='''
-server = couchdb.Server(URL)  #('http://115.146.93.184:5984/')
+server = couchdb.Server('http://'+URL+':5984/')  #('http://115.146.93.184:5984/')
 try:
+    print db_name
     db = server[db_name]
+
 except:
     sys.stderr.write("Error: DB not found. Closing...\n")
     sys.exit()

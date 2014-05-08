@@ -49,7 +49,7 @@ db_name = sys.argv[2]
 
 
 '''========couchdb'=========='''
-server = couchdb.Server(URL)  #('http://115.146.93.184:5984/')
+server = couchdb.Server('http://'+URL+':5984/')  #('http://115.146.93.184:5984/')
 try:
     db = server[db_name]
 except:
