@@ -14,6 +14,7 @@ Geocouch Installation
     	sudo apt-get install libcurl4-openssl-dev  
     	sudo apt-get install pkg-config  
 	sudo apt-get install -y libmozjs185-dev libicu-dev libcurl4-gnutls-dev libtool  
+	sudo apt-get install -y g++  
 
 2. Download and extract http://mirror.sdunix.com/apache/couchdb/source/1.5.0/apache-couchdb-1.5.0.tar.gz
 3. cd apache-couchdb-1.5.0/
