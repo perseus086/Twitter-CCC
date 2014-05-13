@@ -207,7 +207,7 @@ view = sys.argv[3]
 
 
 #### MAIN
-LIMIT_OF_DOCUMENTS = 1000;
+LIMIT_OF_DOCUMENTS = 10000;
 
 dict_of_sentiments = dictionaries()
 
@@ -233,7 +233,10 @@ while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
             polarity = 'positive'
         subjectivity = testimonial.sentiment.subjectivity
         json_data['label'] = {'polarity': polarity, 'polarity_value': polarity_value, 'subjectivity': subjectivity}
-        db.save(json_data)
+        try:
+            db.save(json_data)
+        except:
+            print "Data repeated..."
 
     # f = open('input/m/t1.txt', 'r')
     #
