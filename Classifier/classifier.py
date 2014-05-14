@@ -197,23 +197,24 @@ def database(URL, db_name):
         sys.exit(2)
 
 
-if len(sys.argv) != 4:
-    sys.stderr.write("Arguments <URL(localhost)> <DB name> <view (test/test)>")
+if len(sys.argv) != 5:
+    sys.stderr.write("Arguments <URL(localhost)> <DB name> <view (test/test)> <startkey>")
     sys.exit()
 
 URL = sys.argv[1]
 name_of_db = sys.argv[2]
 view = sys.argv[3]
+stkey = int(sys.argv[4])
 
 
 #### MAIN
-LIMIT_OF_DOCUMENTS = 10000;
+LIMIT_OF_DOCUMENTS = 1000;
 
 dict_of_sentiments = dictionaries()
 
 db = database(URL, name_of_db)
 while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
-    for data in db.view(view, limit=LIMIT_OF_DOCUMENTS):
+    for data in db.view(view, limit=LIMIT_OF_DOCUMENTS, startkey=stkey):
         print '=' * 40
         print '====>', data['value']
         print '---->', data['value'].split()
@@ -241,7 +242,7 @@ while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
     # f = open('input/m/t1.txt', 'r')
     #
     # lines = f.readlines()
-    #
+
     # for line in lines:
     #     print pure_text(line)
     #
