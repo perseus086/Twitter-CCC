@@ -1,5 +1,4 @@
 import sys
-from textblob import TextBlob
 import os.path
 
 

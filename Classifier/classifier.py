@@ -197,13 +197,14 @@ def database(URL, db_name):
         sys.exit(2)
 
 
-if len(sys.argv) != 4:
-    sys.stderr.write("Arguments <URL(localhost)> <DB name> <view (test/test)>")
+if len(sys.argv) != 5:
+    sys.stderr.write("Arguments <URL(localhost)> <DB name> <view (test/test)> <startkey>")
     sys.exit()
 
 URL = sys.argv[1]
 name_of_db = sys.argv[2]
 view = sys.argv[3]
+stkey = int(sys.argv[4])
 
 
 #### MAIN
@@ -213,13 +214,13 @@ dict_of_sentiments = dictionaries()
 
 db = database(URL, name_of_db)
 while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
-    for data in db.view(view, limit=LIMIT_OF_DOCUMENTS):
+    for data in db.view(view, limit=LIMIT_OF_DOCUMENTS, startkey=stkey):
         print '=' * 40
         print '====>', data['value']
         print '---->', data['value'].split()
         json_data = {}
         json_data = db.get(data['id'])
-        # print 'REVISION', db.get(data['id'])['_rev']
+        # print 'REVISION', db.get(data['id'])['_rev'] 
         # print json_data['_rev']
         # print json_data['_id']
         testimonial = TextBlob(pure_text(data['value'], dict_of_sentiments))
@@ -233,12 +234,15 @@ while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
             polarity = 'positive'
         subjectivity = testimonial.sentiment.subjectivity
         json_data['label'] = {'polarity': polarity, 'polarity_value': polarity_value, 'subjectivity': subjectivity}
-        db.save(json_data)
+        try:
+            db.save(json_data)
+        except:
+            print "Data repeated..."
 
     # f = open('input/m/t1.txt', 'r')
     #
     # lines = f.readlines()
-    #
+
     # for line in lines:
     #     print pure_text(line)
     #
