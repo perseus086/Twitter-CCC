@@ -220,7 +220,7 @@ while len(db.view(view, limit=LIMIT_OF_DOCUMENTS)) > 0:
         print '---->', data['value'].split()
         json_data = {}
         json_data = db.get(data['id'])
-        # print 'REVISION', db.get(data['id'])['_rev']
+        # print 'REVISION', db.get(data['id'])['_rev'] 
         # print json_data['_rev']
         # print json_data['_id']
         testimonial = TextBlob(pure_text(data['value'], dict_of_sentiments))
