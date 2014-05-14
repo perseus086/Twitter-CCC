@@ -61,5 +61,20 @@ python melbourne-west.py<br>
 python philly-east.py<br>
 python philly-west.py**
 
+<pre>
+inside newharvester: cd newharvester
+
+python melbne.py 115.146.93.27 melbourne
+python melbnw.py 115.146.93.27 melbourne
+python melbse.py 115.146.93.27 melbourne
+python melbsw.py 115.146.93.27 melbourne
+python philne.py 115.146.93.27 philadelphia
+python philnw.py 115.146.93.27 philadelphia
+python philse.py 115.146.93.27 philadelphia
+python philsw.py 115.146.93.27 philadelphia
+<pre>
+
+
+
 	 
 		 
