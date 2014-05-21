@@ -19,13 +19,14 @@ It is important to install fabric before boto because otherwise it will raise an
 
 1.- create a boto config file in the home directory of your account: ~/.boto
     it should contain the credentials for connecting to the cloud
-    <code>[Credentials]
-aws_access_key_id = <<your_id>>
+    <code>[Credentials] <br>
+aws_access_key_id = <<your_id>> <br>
 aws_secret_access_key = <<your_access_key>></code>
 
 2.- Then run the following commands
 	
-<code>	fab create_appserver sethost app_server  </code>
-<code>	fab create_couch setcouch couch_server  </code>	
+
+<code>	fab create_couch setcouchc couch_server  </code>	
+<code>	fab create_appserver sethosta app_server  </code>
 
 

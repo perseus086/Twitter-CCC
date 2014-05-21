@@ -12,6 +12,7 @@ from config import *
 import time
 import paramiko
 import sys
+from fabric.api import settings
 
 
 def connect():
@@ -37,7 +38,6 @@ def create_servercouch(conn):
         """
 
     try:
-
         reservation = conn.run_instances('ami-00001e9d',
                                          key_name='eli',
                                          instance_type='m1.small',
@@ -109,14 +109,32 @@ def create_serverapp(conn):
     return ip[items]
 
 
-def sethost():
-    time.sleep(40)
+def sethostc():
+    # time.sleep(20)
     listh = hosts()
+    print str(listh[0])
     env.host_string = str(listh[0])
-    print env.hosts
+    print env.host_string
     env.user = "ubuntu"
     env.key_filename = "/Users/elikary/Downloads/eli.pem"
 
+def sethosta():
+    # time.sleep(20)
+    listh = hosts()
+    env.host_string = str(listh[1])
+    print env.hosts_string
+    env.user = "ubuntu"
+    env.key_filename = "/Users/elikary/Downloads/eli.pem"
+
+
+def sethost():
+    time.sleep(20)
+    listh = hosts()
+    leng = len(listh)-1
+    env.host_string = str(listh[leng])
+    print env.hosts
+    env.user = "ubuntu"
+    env.key_filename = "/Users/elikary/Downloads/eli.pem"
 
 def hosts():
     ip = []
@@ -152,13 +170,15 @@ def create_appserver():
 # setting up configuration on servers
 
 def sed_couch():
-    time.sleep(5)
+    time.sleep(40)
     sudo('sed -i "s/bind_address = 127.0.0.1/bind_address = 0.0.0.0/" /etc/couchdb/default.ini')
     sudo('service couchdb restart')
 
 
 def git_clone():
-    sudo('mkdir /mnt/data')
+    time.sleep(40)
+    with warn_only():
+        sudo('mkdir /mnt/data')
     print (_yellow("Cloning Twitter project"))
     directory = '/mnt/data'
     with cd(directory):
@@ -187,6 +207,8 @@ def set_web():
     sudo("apt-get -q update")
     packages = "php5 apache2 libapache2-mod-php5 php5-json"
     sudo("apt-get install -q -y %s" % packages)
+    sudo("chmod -R 777 /var/www")
+    sudo("service apache2 restart")
     git_web()
 
 
